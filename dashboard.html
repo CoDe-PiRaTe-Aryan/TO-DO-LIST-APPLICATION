@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | To-Do App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard">
+  <div class="sidebar">
+    <h3>Reminders</h3>
+    <ul id="notificationsList"></ul>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>Hello, <span id="userDisplay"></span> 👋</h2>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section class="task-entry">
+      <input type="text" id="taskInput" placeholder="New Task..."/>
+      <input type="date" id="taskDate" />
+      <label><input type="checkbox" id="markImportant"/> Important</label>
+      <button onclick="addTask()">Add Task</button>
+    </section>
+
+    <section class="task-sections">
+      <div class="task-column">
+        <h3>All Tasks</h3>
+        <ul id="taskList"></ul>
+      </div>
+
+      <div class="task-column">
+        <h3>Important Tasks</h3>
+        <ul id="importantList"></ul>
+      </div>
+
+      <div class="task-column">
+        <h3>Pending Tasks</h3>
+        <ul id="pendingList"></ul>
+      </div>
+    </section>
+
+    <section class="calendar-section">
+      <h3>Calendar View</h3>
+      <div id="calendarContainer"></div>
+    </section>
+
+    <section class="progress-section">
+      <h3>Weekly Progress</h3>
+      <canvas id="progressChart" width="400" height="200"></canvas>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
